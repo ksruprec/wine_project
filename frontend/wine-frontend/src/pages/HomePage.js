@@ -11,7 +11,7 @@ function HomePage() {
       const getWines = async () => {
         const data = await WineAPI.fetchWines()
         if (data) {
-          setWines(data.wines)
+          setWines(data)
         }
       }
   

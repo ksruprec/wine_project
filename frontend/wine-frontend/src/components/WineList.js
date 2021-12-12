@@ -4,14 +4,14 @@ import { Link } from "react-router-dom"
 function WineList(props) {
   // render
   const renderWines = () => {
-    console.log(props.wines)
     if (!props.wines)
         return null
 
     return props.wines.map((wine, index) => {
       return (
         <tr key={index}>
-          <td><Link to={`${wine.id}/`}>{ wine.name }</Link></td>
+          <td>{ wine.id }</td>
+          <td><Link to={`${wine.id}/`}>{ wine.wine_name }</Link></td>
           <td>{ wine.price }</td>
           <td>{ wine.varietal }</td>
         </tr>

@@ -28,7 +28,7 @@ function WinePage() {
     
     return (
       <div>
-        <h3>Wine: { wine.name }</h3>
+        <h3>Wine: { wine.wine_name }</h3>
         <p>Price: { wine.price }</p>
         <p>Varietal: { wine.varietal }</p>
         <p>Description: { wine.description }</p>

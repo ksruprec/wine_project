@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { Form, Button } from "react-bootstrap"
 import WineAPI from "../api/WineAPI"
 
-function AddWinePage() {
+function AddWinePage(props) {
   // router props
   const navigate = useNavigate()
 
@@ -10,15 +10,16 @@ function AddWinePage() {
   const handleFormSubmit = async (event) => {
     event.preventDefault()
     
-    const wineData = {
+    const wineObj = {
       name: event.target.elements[0].value,
       price: event.target.elements[1].value,
       varietal: event.target.elements[2].value,
       description: event.target.elements[3].value
     }
 
-    const data = await WineAPI.addWine(wineData)
+    const data = await WineAPI.addWine(wineObj)
     if (data) {
+      console.log(data)
       navigate(`/wines/${data.id}`)
     }
   }
